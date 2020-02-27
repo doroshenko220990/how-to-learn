@@ -2,30 +2,293 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Отлично: Стили подключены в правильном порядке -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Научиться учиться</title>
 </head>
 <body>
     <div class="page">
         <header class="header">
-
+            <img class="logo logo_place_header" src="images/logo.svg" alt="#">
+            <!-- Надо исправить:
+                1. Этот div-элемент - лишняя обертка. Ее можно удалить без вреда для верстки. Старайтесь избегать лишних элементов в разметке
+                Класс нужно задать самому img 
+                2. Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор
+                Придерживайтесь схемы: block block_mod_value
+                3. Путь к картинке не должен сожержать имя корневой папки, замените на абсолютный вариант, например: "images/logo.svg" 
+            -->
+            <h2 class="header__title">Научиться учиться</h2>
+            <!-- Надо исправить: Тут должен быть заголовок  -->
+            <p class="header__subtitle">Какие современные и эффективные подходы к обучению вы можете использовать в своей жизни?<a class="header__link" href="#">Узнать &#8594</a></p>
+            <!-- Надо исправить:
+                1. Данный элемент содержит текстовый контент, использование DIV - некорректное решение. 
+                2. Класс header__link нужно задать ссылке <a>, для подзаголовка возьмите класс из брифа 
+            -->
+            <!-- Можно лучше: для спец символов нужно использовать html - мнемоники (https://ru.wikipedia.org/wiki/Мнемоники_в_HTML)-->
+            <div class="header__main-illustration"></div>
+            <div class="header__square-pic"></div>
         </header>
         <main class="content">
             <section class="description">
+                <div class="two-columns">
+                    <h4 class="two-columns__brief">Главные проблемы в обучении</h4>
+                    <!-- Надо исправить:
+                        two-columns__brief должен быть заголовком 
+                    -->
+                    <div class="two-columns__main-text">
+                        <p class="two-columns__paragraph">Ни в школе, ни в институте нас не учат тому, как правильно изучать материал. Мы готовимся к экзаменам и учим билеты. Мы тренируемся решать однообразные задачи, чтобы лучше сдать тест, но часто в итоге это не дает нам реального знания. Зубрежка быстро выветривается и не приносит пользы.</p>
+                        <p class="two-columns__paragraph"><span class="two-columns__span-accent">Вывод:</span>учиться тоже нужно уметь, но почему-то этому мало где учат. Что с этим делать?</p>
+                        <p class="two-columns__paragraph">Конкретные техники и упражнения помогают изменить подход к обучению, сделать его эффективным и захватывающим. Эти же техники применяются на примере обучения в Практикуме.</p>
+                    </div>
+                </div>
             </section>
             
             <section class="digits">
+                <h3 class="section-title">Цифры и факты</h3>
+                <!-- Надо исправить:
+                    <h1> - самый главный заголовок на странице(должен быть только один). Этот заголовок не является главным заголовком, 
+                    подыщите для <h1> другой заголовок, а этот нужно разметить уровнем ниже 
+                -->
+                <p class="section-subtitle">Про учебу и мозг</p>
+                <!-- Можно лучше:
+                    Подзаголовки не рекомендуется делать элементами h.
+                    Подробности: https://www.w3.org/TR/html52/common-idioms-without-dedicated-elements.html#subheadings-subtitles-alternative-titles-and-taglines
+                -->
+                <div class="table">
+                    <div class="table__cell">
+                        <p class="table__heading">86 миллиардов</p>
+                        <p class="table__text">Число нейронов в мозге человека</p>
+                    </div>
+                    <div class="table__cell">
+                        <p class="table__heading">2.1 миллиарда</p>
+                        <p class="table__text">Число нуждающихся в повышении квалификации</p>
+                            <p class="table__text">Всемирный Банк, 2017</p>
+                            <!-- Надо исправить:
+                                У этого элемента должен быть такой же класс table__text, и он должен следовать за
+                                первым table__text, а не быть вложенным в него 
+                            -->
+                        
+                    </div>
+                    <div class="table__cell">
+                        <p class="table__heading">1000 терабайт</p>
+                        <p class="table__text">Объём памяти человека</p>
+                    </div>
+                    <div class="table__cell">
+                        <!-- Надо исправить: опечатка в классе, не хватает подчеркивания --> 
+                        <p class="table__heading">500 триллионов</p>
+                        <p class="table__text">Число ответственных за обучение нервных синапсов у взрослого человека</p>
+                    </div>
+                    <div class="table__cell">
+                        <p class="table__heading">420 миллионов</p>
+                        <p class="table__text">Число взрослых людей моложе 25 лет, не имеющих образования для трудоустройства</p>
+                            <p class="table__text">Всемирный Банк, 2017</p>
+                            <!-- Надо исправить:
+                                У этого элемента должен быть такой же класс table__text, и он должен следовать за
+                                первым table__text, а не быть вложенным в него 
+                            -->
+                    </div>
+                    <div class="table__cell">
+                        <p class="table__heading">17–20 лет</p>
+                        <p class="table__text">Пик обучаемости</p>
+                    </div>
+                    <div class="table__cell">
+                        <p class="table__heading">1885 год</p>
+                        <p class="table__text">Открытие кривой забывания</p>
+                    </div>
+                    <div class="table__cell">
+                        <p class="table__heading">1889 год</p>
+                        <p class="table__text">Открытие условного рефлекса</p>
+                    </div>
+                </div>
             </section>
 
             <section class="feinman">
+                <h1 class="feinman__title">Метод Фейнмана</h1>
+                <p class="feinman__subtitle">Выучить и не забыть.</p>
+                <!-- Можно лучше: Подзаголовки не рекомендуется делать элементами h.  -->
+                <a class="feinman__link" href="#">Подробнее &#8594</a>
+                <!-- Можно лучше: для спец символов нужно использовать html - мнемоники (https://ru.wikipedia.org/wiki/Мнемоники_в_HTML)-->
             </section>
             
             <section class="kaufman">
+                <div class="kaufman__triangle"></div>
+                <!-- Надо исправить:
+                    Лишняя <div>-обертка 
+                -->
+                <!-- Можно лучше:
+                    Данное изображение - декоративное, оно не несет в себе никакого смысла, лучше вставить его воспользовавшись свойством background-image(img в таком случае замените на div).
+                -->
+                <h3 class="section-title section-title_theme_dark">Принципы обучения</h3>
+                <!-- Надо исправить:
+                    Класс не соответствует брифу, здесь нужно переиспользовать класс section-title, с  модификатором theme в значении dark
+                    Придерживайтесь схемы: block block_mod_value 
+                -->
+                <p class="section-subtitle section-subtitle_theme_dark">от Джоша Кауфмана</p>
+                <!-- Надо исправить:
+                    Класс не соответствует брифу, здесь нужно переиспользовать класс section-subtitle, с  модификатором theme в значении dark
+                    Придерживайтесь схемы: block block_mod_value 
+                -->
+                <div class="table table_theme_dark">
+                    <!-- Надо исправить:
+                        Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор
+                        Придерживайтесь схемы: block block_mod_value 
+                    -->
+                    <div class="table__cell table__cell_theme_dark">
+                        <!-- Надо исправить:
+                            По всей таблице для cell, heading и  text:
+                                Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор
+                                Придерживайтесь схемы: block__element block__element_mod_value 
+                        -->
+                        <div class="table__heading table__heading_theme_dark">1</div>
+                        <p class="table__text table__text_theme_dark">Выберите привлекательный проект.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">2</div>
+                        <p class="table__text table__text_theme_dark">Сосредоточьтесь на каком-то одном навыке.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">3</div>
+                        <p class="table__text table__text_theme_dark">Определите целевой уровень мастерства.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">4</div>
+                        <p class="table__text table__text_theme_dark">Разбейте навык на элементы.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">5</div>
+                        <p class="table__text table__text_theme_dark">Приготовьте всё необходимое для занятий.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">6</div>
+                        <p class="table__text table__text_theme_dark">Устраните препятствия для занятий.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">7</div>
+                        <p class="table__text table__text_theme_dark">Выделите специальное время для занятий.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">8</div>
+                        <p class="table__text table__text_theme_dark">Создайте быстрые петли обратной связи.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">9</div>
+                        <p class="table__text table__text_theme_dark">Занимайтесь по расписанию, короткими интенсивными интервалами.</p>
+                    </div>
+                    <div class="table__cell table__cell_theme_dark">
+                        <div class="table__heading table__heading_theme_dark">10</div>
+                        <p class="table__text table__text_theme_dark">Уделяйте внимание количеству и скорости.</p>
+                    </div>
+                </div>
             </section>
         </main>
         <footer class="footer">
-
+            <div class="footer__columns">
+                <div class="footer__column footer__column_content_copyright">
+                    <!-- Надо исправить:
+                        Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор
+                        Придерживайтесь схемы: block__element block__element_mod_value 
+                    -->
+                    <img class="logo logo_place_footer" src="images/logo_white.svg" alt="#">
+                    <!-- Надо исправить:
+                        1. Этот div-элемент - лишняя обертка. Ее можно удалить без вреда для верстки. Старайтесь избегать лишних элементов в разметке
+                        Класс нужно задать самому img 
+                        2. Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор
+                        Придерживайтесь схемы: block block_mod_value
+                    -->
+                    <div class="footer__author">©2019. Ваше Имя</div>
+                    <!-- Можно лучше: для спец символов нужно использовать html - мнемоники (https://ru.wikipedia.org/wiki/Мнемоники_в_HTML)-->
+                </div>
+                <nav class="footer__column footer__column_content_info">
+                    <!-- Надо исправить:
+                        1. Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор
+                        Придерживайтесь схемы: block__element block__element_mod_value 
+                        2. По смыслу это навигация, здесь нужно использовать тег <nav> (вместо <div>)
+                        Подробнее об этом теге: https://developer.mozilla.org/ru/docs/Web/HTML/Element/nav 
+                    -->
+                    <div class="footer__column-heading">О Практикуме</div>
+                        <!-- Отлично: Использован тег ul подходящий по семантике. -->
+                        <ul class="footer__column-links">
+                            <li><a class="footer__column-link" href="#">Главная</a></li>
+                            <li><a class="footer__column-link" href="#">Концепция</a></li>
+                           <li><a class="footer__column-link" href="#">Наставники</a></li>
+                        </ul>
+                        <!-- Надо исправить:
+                            По смыслу это должны быть ссылки, оберните текст внутри li ссылки с классом footer__column-link 
+                        --> 
+                </nav>
+                <nav class="footer__column footer__column_social">
+                    <!-- Надо исправить:
+                        1. Класс не соответствует БЭМ. Не хватает класса от которого образован модификатор
+                        + по брифу модификатор должен быть content, а уже его значение - social
+                        Придерживайтесь схемы: block__element block__element_mod_value 
+                        2. По смыслу это навигация, здесь нужно использовать тег <nav> (вместо <div>)
+                        Подробнее об этом теге: https://developer.mozilla.org/ru/docs/Web/HTML/Element/nav
+                    -->
+                    <div class="footer__column-heading">Соцсети</div>
+                    <ul class="footer__column-links">
+                        <li><a class="footer__column-link" href="https://www.facebook.com/"><img class="footer__social-icon" src="images/facebook_white.svg" alt="#">Facebook</a></li>
+                        <li><a class="footer__column-link" href="https://vk.com/"><img class="footer__social-icon" src="images/vk_white.svg" alt="#">ВКонтакте</a></li>
+                        <li><a class="footer__column-link" href="https://www.instagram.com/?hl=ru"><img class="footer__social-icon" src="images/instagram_white.svg" alt="#">Instagram</a></li>
+                    </ul>
+                    <!-- Надо исправить:
+                        1. Класс footer__social-icon(именно в единственном числе) предназначен для иконок img 
+                        2. А для ссылок нужно переиспользовать класс footer__column-link 
+                    -->
+                </nav>
+            </div>
         </footer>
     </div>
 </body>
 </html>
+
+<!--Резюме по работе:
+
+    У вас получилась хорошая работа! 
+
+    Что понравилось:
+
+        - Форматирование кода.
+
+        - Верстка очень похожа на макет.
+
+        - Правильно оформлен head
+
+        - есть хорошие семантичные теги
+    
+    Что надо исправить помимо замечаний в коде:
+
+        - Проверьте, чтобы на странице был только один h1.
+
+        - Все текстовые элементы должны быть размечены h1-h6/p, а не div.
+
+        - Проверьте, что пути ко всем картинам не содержат имя корневой папки
+
+        - Цвет header__link и header__square-pic не соответствует брифу(должен быть светло-голубой, код цвета возьмите из брифа)
+
+        - у header__link нужно убрать подчеркивание
+
+        - ссылка header__link должна быть кликабельна
+
+        - Задайте блоку header свойство overflow со значением hidden, чтобы при изменении высоты экрана синий квадрат не вылезал за пределы header
+
+        - Цвет ссылки ```feinman__link``` не соответствует брифу(должен быть черный)
+
+        - Цвет фона у ```kaufman``` и footer не соответствует брифу, должен быть не черный, а темно-серый(код есть в брифе).
+
+        - Иконокам соцсетей добавьте небольшой отступ справа, чтобы они не слипались с текстом
+        
+    Можно лучше:
+
+        - Очень хорошей практикой было бы добавить всем интерактивным элементам(тем, с которыми может взаимодействовать пользователь, например - ссылки)
+        эффект при наведении с помощью :hover.
+        Подробнее про состояние наведения можно почитать тут https://developer.mozilla.org/ru/docs/Web/CSS/:hover
+
+        - Оставлять атрибут alt пустым - не лучшая практика.
+        Пользователь не получит никакой информации в том случае, если изображение не загрузится.
+
+    Комментарии "можно лучше" носят рекомендательный характер, их выполнение остается на Ваше усмотрение.
+    Комментарии "надо исправить" являются обязательными, только при выполнении всех "надо исправить" работа будет зачтена.
+
+-->
