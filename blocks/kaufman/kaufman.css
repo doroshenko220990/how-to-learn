@@ -1,0 +1,9 @@
+@import url(./__triangel/kaufman__triangle.css);
+
+.kaufman {
+    background-color: #1f1f1f;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    padding: 90px;
+}
