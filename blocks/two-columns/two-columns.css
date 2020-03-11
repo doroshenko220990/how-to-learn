@@ -6,6 +6,6 @@
 .two-columns {
     display: flex;
     width: 80%;
-    margin: 100px auto;
+    margin: auto;
     justify-content: space-between;
 }
